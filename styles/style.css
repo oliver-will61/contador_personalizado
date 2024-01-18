@@ -1,0 +1,109 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+
+    --fonte: 'Poppins', sans-serif;
+    --cor-de-fundo:black;
+    --cor-principal:#9511c5;
+    --cor-da-fonte: white;
+    --cor-da-borda:white;
+    --cor-botao:#B33EDD;
+
+    --tamanho-da-borda:3px;
+    
+}
+
+body{
+    height: 100vh;
+    text-align: center;
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-da-fonte);
+    font-family: var(--fonte);
+    font-weight: 300;
+}
+.cabecalho{
+    position: fixed;
+    padding: 1em;
+    background-color: var(--cor-principal);
+    width: 100%;
+    box-sizing: border-box;
+    border: 1.9px solid var(--cor-de-fundo);
+}
+.cabecalho-lista{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lista-titulo{
+    color: var(--cor-da-fonte);
+    font-weight: 700;
+}
+.botao{
+    background: var(--cor-de-fundo);
+    color:var(--cor-da-fonte);
+    border: 1px solid var(--cor-da-borda);
+    border-radius: 5px;
+    padding: 0.5em;
+    font-family: var(--fonte);
+    font-size: 0.9em;
+    font-weight: 600;
+    /* cursor: pointer; */
+}
+.principal{
+    padding: 5.3em 0 0 0;
+}
+.principal-formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.requisito-titulo{
+    color:var(--cor-da-fonte);
+    font-size: 1em;
+}
+
+.objeto{
+    margin-bottom: 1em;
+    padding: 0.5em 0;
+    background-color: var(--cor-principal);
+    border-radius: 25px;
+    width: 95%;
+}
+.controle{
+    margin-top: 0.25em;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.requisito-quantidade{
+    text-align: center;
+    padding: 0.5em 0.3em;
+    font-size: 1em;
+    background: var(--cor-de-fundo);
+    border: var(--tamanho-da-borda) solid var(--cor-da-borda);
+    border-radius: 13px;
+    color: var(--cor-da-fonte);
+}
+.requisito-botoes{
+    border: var(--tamanho-da-borda) solid var(--cor-da-borda);
+    border-radius: 50%;
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-da-fonte);
+    height: 45px;
+    width: 45px;
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* cursor: pointer; */
+}
+
+.requisito-botoes:active, .botao:active {
+    background-color: var(--cor-botao);
+}
+
+footer{
+    padding-bottom:1em;
+}
