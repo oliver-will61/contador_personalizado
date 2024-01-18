@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contador</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <ul class="cabecalho-lista">
+            <li class="lista-itens">
+                <h1 class="lista-titulo">Habilidades para vagas de TI</h1>
+            </li>
+
+            <li class="lista-itens">
+                <button type="button" class="botao" data-botao-salvar>Save</button>
+                <button type="button" class="botao" data-botao-carregar>Load</button>
+            </li>
+        </ul>
+
+    </header>
+
+    <main class="principal">
+
+        <form class="principal-formulario">
+
+            <div class="container-contadir">
+                <h1 class="requisito-titulo" id= "requisito-titulo">Lógica de Programação</h1>
+                <div class="controle">
+                    <button type="button"class="requisito-botoes" data-botao="-">-</button>
+                    <input readonly class="requisito-quantidade" data-quantidade value="0" type="text">
+                    <button type="button" class="requisito-botoes" data-botao="+">+</button>
+                </div>
+            </div> 
+            
+        </form>
+
+    </main>
+
+    <footer class="rodape">
+        <p class="rodape-texto">*Todos os requisitos são para vagas de estágio*</p>
+    </footer>
+
+</body>
+</html>
