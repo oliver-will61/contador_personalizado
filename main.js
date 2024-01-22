@@ -1,9 +1,3 @@
-
-//const objetoQuantidade = document.querySelectorAll('#quantidade');
-const containerForm = document.getElementById("form");
-let btnPostivo = document.querySelectorAll('#botao-positivo')
-let btnNegativo = document.querySelectorAll('#botao-negativo')
-
 const btnAdd = document.getElementById('add-obj');
 const btnSave = document.getElementById('botao-salvar');
 const btnLoad = document.getElementById('botao-load');
@@ -12,6 +6,8 @@ carregaBtns();
 
 
 btnAdd.addEventListener('click', () => {
+
+    const containerForm = document.getElementById("form");
 
     let nomeContador = prompt('Digite o nome do contador');
 
