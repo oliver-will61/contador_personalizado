@@ -7,22 +7,37 @@ carregaBtns();
 
 btnAdd.addEventListener('click', () => {
 
-    const containerForm = document.getElementById("form");
+    const nomeContador = prompt('Digite o nome do contador');
 
-    let nomeContador = prompt('Digite o nome do contador');
+    if (nomeContador == null) {
+        alert('Ação cancelada!');
+    }else {
 
-    containerForm.innerHTML+= `            
-    <div class="objeto">
-        <h1 class="objeto-titulo" id= "objeto">${nomeContador}</h1>
-        <div class="controle">
-            <button type="button"class="objeto-botoes" id="botao-negativo">-</button>
-            <input readonly class="objeto-quantidade" id="quantidade" value="0">
-            <button type="button" class="objeto-botoes" id="botao-positivo">+</button>
-        </div>
-    </div> 
-`
-    carregaBtns()
+        const valorContador = 0
+        const containerForm = document.getElementById("form");
 
+        class Contador {
+            constructor (nomeContador, quantidadeContador){
+                this.nome = nomeContador
+                this.quantidade = quantidadeContador
+            }
+        }
+
+        const contador = new Contador (nomeContador, valorContador)
+        console.log(contador);
+
+        containerForm.innerHTML+= `            
+        <div class="objeto">
+            <h1 class="objeto-titulo" id= "objeto">${contador.nome}</h1>
+            <div class="controle">
+                <button type="button"class="objeto-botoes" id="botao-negativo">-</button>
+                <input readonly class="objeto-quantidade" id="quantidade" value="${contador.quantidade}">
+                <button type="button" class="objeto-botoes" id="botao-positivo">+</button>
+            </div>
+        </div> 
+    `
+        carregaBtns()
+    }
 })
 
 function carregaBtns() {
