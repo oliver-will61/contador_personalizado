@@ -4,6 +4,26 @@ const btnLoad = document.getElementById('botao-load');
 
 carregaBtns();
 
+class Contador {
+    constructor (nomeContador, quantidadeContador){
+        this.nome = nomeContador
+        this.quantidade = quantidadeContador
+    }
+}
+
+const contadores = []
+
+btnSave.addEventListener('click', () => {
+    const confirmar = confirm("Tem certeza que deseja salvar as alterações?")
+    if(confirmar == false) {
+        alert('Salvamento cancelado!')
+    } else {
+
+        localStorage.setItem('contadores', JSON.stringify(contadores));
+        alert('Os dados foram salvos!')
+    }
+})
+
 
 btnAdd.addEventListener('click', () => {
 
@@ -16,15 +36,8 @@ btnAdd.addEventListener('click', () => {
         const valorContador = 0
         const containerForm = document.getElementById("form");
 
-        class Contador {
-            constructor (nomeContador, quantidadeContador){
-                this.nome = nomeContador
-                this.quantidade = quantidadeContador
-            }
-        }
-
         const contador = new Contador (nomeContador, valorContador)
-        console.log(contador);
+        contadores.push(contador);
 
         containerForm.innerHTML+= `            
         <div class="objeto">
@@ -47,7 +60,10 @@ function carregaBtns() {
      btnPostivo.forEach((botao)=> {
         botao.addEventListener('click', (event) => {
            let objetoQuantidade = event.currentTarget.parentElement.querySelector('#quantidade')
+           let objetoNome = botao.parentNode.parentElement.querySelector('#objeto').innerHTML
+           console.log(objetoNome)
            objetoQuantidade.value = parseFloat(objetoQuantidade.value) +1
+           console.log(contadores)
         })
     }) 
 
